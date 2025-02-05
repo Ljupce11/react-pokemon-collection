@@ -18,9 +18,7 @@ function App() {
   return (
     <div>
       <h1 className="text-3xl font-bold text-blue-500">Vite + React</h1>
-      <Button className="bg-slate-500" variant={"destructive"}>
-        Click me
-      </Button>
+      <Button>Click me</Button>
     </div>
   );
 }
