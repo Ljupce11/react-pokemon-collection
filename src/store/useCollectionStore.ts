@@ -1,17 +1,15 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface Pokemon {
-  name: string;
-}
+import type { Pokemon } from "@/types/types";
 
-interface CollectionStore {
+type CollectionStore = {
   collection: Pokemon[];
   addPokemon: (pokemon: Pokemon) => void;
   removePokemon: (pokemonName: string) => void;
   isPokemonInCollection: (pokemonName: string) => boolean;
   clearCollection: () => void;
-}
+};
 
 const useCollectionStore = create<CollectionStore>()(
   persist(
