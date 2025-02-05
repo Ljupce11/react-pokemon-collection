@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 export const Navbar = () => {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4 gap-4 md:justify-between">
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -19,7 +19,7 @@ export const Navbar = () => {
           </span>
         </Link>
         <div>
-          <ul className="font-medium flex gap-4">
+          <ul className="font-medium flex flex-wrap justify-center gap-4">
             <li>
               <NavLink to="/">
                 {({ isActive }) => (
