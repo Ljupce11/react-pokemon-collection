@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router";
+import logo from "../../assets/img/logo.webp";
 import { Button } from "../ui/button";
 
 export const Navbar = () => {
@@ -9,11 +10,7 @@ export const Navbar = () => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Pokemon Collection Logo"
-          />
+          <img src={logo} className="h-8" alt="Pokemon Collection Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Pokemon Collection
           </span>
