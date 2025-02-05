@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
+import { AddToCollectionButton } from "./components/common/add-to-collection-button";
 import { SearchForm } from "./components/common/search-form";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardHeader } from "./components/ui/card";
@@ -85,8 +86,9 @@ function App() {
                       />
                     </CardHeader>
                     <Separator />
-                    <CardContent>
+                    <CardContent className="flex justify-between items-center">
                       <p className="capitalize font-semibold">{pokemon.name}</p>
+                      <AddToCollectionButton pokemon={pokemon} />
                     </CardContent>
                   </Card>
                 </Link>
@@ -96,6 +98,7 @@ function App() {
         </div>
         <div className="mx-auto flex items-center justify-center gap-4">
           <Button
+            variant="outline"
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
             aria-label="Previous page"
@@ -108,6 +111,7 @@ function App() {
           </span>
 
           <Button
+            variant="outline"
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
             aria-label="Next page"
