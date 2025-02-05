@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import useCollectionStore from "@/store/useCollectionStore";
 import { Check, Plus } from "lucide-react";
 
-interface Props {
-  pokemon: {
-    name: string;
-  };
-}
+import { Button } from "@/components/ui/button";
+import useCollectionStore from "@/store/useCollectionStore";
+import type { Pokemon } from "@/types/types";
+
+type Props = {
+  pokemon: Pokemon;
+};
 
 export const AddToCollectionButton = ({ pokemon }: Props) => {
   const { addPokemon, isPokemonInCollection } = useCollectionStore();
