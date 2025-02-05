@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Button } from "./components/ui/button";
 
 function App() {
   useEffect(() => {
@@ -16,10 +15,13 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-blue-500">Vite + React</h1>
-      <Button>Click me</Button>
-    </div>
+    <main className="bg-white border-gray-200 dark:bg-gray-900">
+      <div className="max-w-screen-xl mx-auto p-4">
+        <h1 className="text-3xl font-bold text-blue-500 text-center">
+          Vite + React
+        </h1>
+      </div>
+    </main>
   );
 }
 
