@@ -47,7 +47,7 @@ function App() {
   return (
     <main className="bg-white border-gray-200 dark:bg-gray-900 min-h-screen">
       <div className="max-w-screen-xl flex flex-col mx-auto gap-8 p-4">
-        <h1 className="text-2xl font-bold text-center">Browse pokemon</h1>
+        <h1 className="text-2xl font-semibold text-center">Browse pokemon</h1>
         <SearchForm />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
