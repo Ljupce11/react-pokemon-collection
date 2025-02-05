@@ -8,7 +8,6 @@ type CollectionStore = {
   addPokemon: (pokemon: Pokemon) => void;
   removePokemon: (pokemonName: string) => void;
   isPokemonInCollection: (pokemonName: string) => boolean;
-  clearCollection: () => void;
 };
 
 const useCollectionStore = create<CollectionStore>()(
@@ -35,10 +34,6 @@ const useCollectionStore = create<CollectionStore>()(
 
       isPokemonInCollection: (pokemonName) => {
         return get().collection.some((pokemon) => pokemon.name === pokemonName);
-      },
-
-      clearCollection: () => {
-        set({ collection: [] });
       },
     }),
     {
