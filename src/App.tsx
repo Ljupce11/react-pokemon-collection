@@ -3,7 +3,8 @@ import { Link } from "react-router";
 
 import { SearchForm } from "./components/common/search-form";
 import { Button } from "./components/ui/button";
-import { Card, CardHeader } from "./components/ui/card";
+import { Card, CardContent, CardHeader } from "./components/ui/card";
+import { Separator } from "./components/ui/separator";
 import { Skeleton } from "./components/ui/skeleton";
 
 const ITEMS_PER_PAGE = 20;
@@ -57,15 +58,19 @@ function App() {
                 return (
                   <Card key={key}>
                     <CardHeader>
-                      <Skeleton className="h-6 w-24 rounded-md" />
+                      <Skeleton className="h-24 w-full rounded-md" />
                     </CardHeader>
+                    <Separator />
+                    <CardContent>
+                      <Skeleton className="h-6 w-24 rounded-md" />
+                    </CardContent>
                   </Card>
                 );
               })}
             </>
           ) : (
             <>
-              {pokemon.map((pokemon) => (
+              {pokemon.map((pokemon, index) => (
                 <Link
                   to={`/pokemon/${pokemon.name}`}
                   key={pokemon.name}
@@ -73,8 +78,16 @@ function App() {
                 >
                   <Card>
                     <CardHeader>
-                      <p className="capitalize">{pokemon.name}</p>
+                      <img
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+                        alt={pokemon.name}
+                        className="w-24 h-24 mx-auto"
+                      />
                     </CardHeader>
+                    <Separator />
+                    <CardContent>
+                      <p className="capitalize font-semibold">{pokemon.name}</p>
+                    </CardContent>
                   </Card>
                 </Link>
               ))}
