@@ -5,7 +5,7 @@ import { Skeleton } from "../ui/skeleton";
 export const BrowsePokemonSkeleton = () => {
   return (
     <>
-      {Array.from({ length: 20 }).map((_, index) => {
+      {Array.from({ length: 8 }).map((_, index) => {
         const key = `skeleton-${index + 1}`;
         return (
           <Card key={key}>

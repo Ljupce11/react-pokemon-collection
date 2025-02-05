@@ -20,7 +20,7 @@ export const usePokemonData = () => {
     try {
       const offset = (currentPage - 1) * PAGINATION_ITEMS_PER_PAGE;
       const response = await fetch(
-        `https://pok123eapi.co/api/v2/pokemon?offset=${offset}&limit=${PAGINATION_ITEMS_PER_PAGE}`,
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${PAGINATION_ITEMS_PER_PAGE}`,
       );
 
       if (!response.ok) {

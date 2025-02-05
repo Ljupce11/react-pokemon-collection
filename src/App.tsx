@@ -22,23 +22,23 @@ function App() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {isLoading ? (
             <BrowsePokemonSkeleton />
+          ) : pokemon.length === 0 ? (
+            <div className="col-span-full text-center text-gray-500">
+              No pokemon found
+            </div>
           ) : (
-            <>
-              {pokemon.map((pokemon, index) => (
-                <PokemonCard
-                  key={pokemon.name}
-                  pokemon={pokemon}
-                  index={index}
-                />
-              ))}
-            </>
+            pokemon.map((pokemon, index) => (
+              <PokemonCard key={pokemon.name} pokemon={pokemon} index={index} />
+            ))
           )}
         </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
+        {pokemon.length > 0 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        )}
       </div>
     </main>
   );
