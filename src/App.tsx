@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SearchForm } from "./components/common/search-form";
 
 function App() {
   useEffect(() => {
@@ -17,9 +18,7 @@ function App() {
   return (
     <main className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl mx-auto p-4">
-        <h1 className="text-3xl font-bold text-blue-500 text-center">
-          Vite + React
-        </h1>
+        <SearchForm />
       </div>
     </main>
   );
