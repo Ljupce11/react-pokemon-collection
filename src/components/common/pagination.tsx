@@ -1,4 +1,6 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { memo } from "react";
+
 import { Button } from "../ui/button";
 
 type Props = {
@@ -17,6 +19,7 @@ export const Pagination = memo(
           disabled={currentPage <= 1}
           aria-label="Previous page"
         >
+          <ChevronLeft size={14} />
           Previous
         </Button>
 
@@ -31,6 +34,7 @@ export const Pagination = memo(
           aria-label="Next page"
         >
           Next
+          <ChevronRight size={14} />
         </Button>
       </div>
     );

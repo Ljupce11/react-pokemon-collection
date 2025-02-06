@@ -28,7 +28,7 @@ export const AddToCollectionButton = ({ pokemon }: Props) => {
       }
       variant={isInCollection ? "ghostSuccess" : "outline"}
     >
-      {isInCollection ? <Check size={14} /> : <Plus size={14} />}
+      {isInCollection && <Check size={14} />}
       {isInCollection ? "In collection" : "Add to collection"}
     </Button>
   );
