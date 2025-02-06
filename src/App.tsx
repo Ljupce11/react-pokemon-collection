@@ -1,8 +1,8 @@
 import { Pagination } from "./components/common/pagination";
-import { PokemonCard } from "./components/common/pokemon-card";
+import { PokemonCardWithDetails } from "./components/common/pokemon-card-with-details";
 import { SearchForm } from "./components/common/search-form";
 import { BrowsePokemonSkeleton } from "./components/skeletons/browse-pokemon-skeleton";
-import { usePokemonData } from "./hooks/usePokemonData";
+import { usePokemonData } from "./hooks/use-pokemon-data";
 
 function App() {
   const {
@@ -28,7 +28,11 @@ function App() {
             </div>
           ) : (
             pokemon.map((pokemon, index) => (
-              <PokemonCard key={pokemon.name} pokemon={pokemon} index={index} />
+              <PokemonCardWithDetails
+                key={pokemon.name}
+                pokemon={pokemon}
+                index={index}
+              />
             ))
           )}
         </div>

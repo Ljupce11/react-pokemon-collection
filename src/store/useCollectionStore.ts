@@ -1,11 +1,11 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-import type { Pokemon } from "@/types/types";
+import type { PokemonData } from "@/types/types";
 
 type CollectionStore = {
-  collection: Pokemon[];
-  addPokemon: (pokemon: Pokemon) => void;
+  collection: PokemonData[];
+  addPokemon: (pokemon: PokemonData) => void;
   removePokemon: (pokemonName: string) => void;
   isPokemonInCollection: (pokemonName: string) => boolean;
 };

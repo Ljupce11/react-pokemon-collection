@@ -2,13 +2,13 @@ import {
   PAGINATION_ITEMS_PER_PAGE,
   TOAST_SETTINGS,
 } from "@/constants/constants";
-import type { Pokemon, PokemonResponse } from "@/types/types";
+import type { PokemonData, PokemonResponse } from "@/types/types";
 import { useCallback, useEffect, useState } from "react";
 import { useToast } from "./use-toast";
 
 export const usePokemonData = () => {
-  const [pokemon, setPokemon] = useState<Pokemon[]>([]);
-  const [cachedPokemon, setCachedPokemon] = useState<Pokemon[]>([]);
+  const [pokemon, setPokemon] = useState<PokemonData[]>([]);
+  const [cachedPokemon, setCachedPokemon] = useState<PokemonData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
