@@ -38,15 +38,17 @@ export const PokemonDetailsSkeleton = () => {
       </div>
 
       <div className="flex flex-col gap-2 my-4">
-        <div className="flex flex-col gap-2">
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
-          <Skeleton className="w-full h-4" />
+        <div className="flex flex-col gap-3">
+          <Skeleton className="w-6 h-4" />
+          <Skeleton className="w-full h-3" />
+          <Skeleton className="w-6 h-4" />
+          <Skeleton className="w-full h-3" />
+          <Skeleton className="w-6 h-4" />
+          <Skeleton className="w-full h-3" />
+          <Skeleton className="w-6 h-4" />
+          <Skeleton className="w-full h-3" />
+          <Skeleton className="w-6 h-4" />
+          <Skeleton className="w-full h-3" />
         </div>
       </div>
     </div>

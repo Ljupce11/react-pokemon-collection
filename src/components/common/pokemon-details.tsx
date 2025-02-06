@@ -2,6 +2,7 @@ import type { PokemonData } from "@/types/types";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 import { Progress } from "../ui/progress";
+import { Skeleton } from "../ui/skeleton";
 
 type Props = {
   index: number;
@@ -12,11 +13,23 @@ export const PokemonDetails = ({ index, pokemonData }: Props) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-center gap-4">
-        <img
-          loading="lazy"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
-          alt={pokemonData.name}
-        />
+        <div className="relative w-24 h-24">
+          <Skeleton className="w-24 h-24" />
+          <img
+            className="invisible w-24 h-24"
+            loading="lazy"
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+            alt={pokemonData.name}
+            onLoad={(event) => {
+              const target = event.target as HTMLImageElement;
+              target.classList.remove("invisible");
+              const placeholder = target.previousElementSibling;
+              if (placeholder) {
+                placeholder.classList.add("hidden");
+              }
+            }}
+          />
+        </div>
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-2xl font-semibold capitalize">
             {pokemonData.name}
@@ -29,11 +42,23 @@ export const PokemonDetails = ({ index, pokemonData }: Props) => {
             ))}
           </div>
         </div>
-        <img
-          loading="lazy"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${index + 1}.png`}
-          alt={pokemonData.name}
-        />
+        <div className="relative w-24 h-24">
+          <Skeleton className="w-24 h-24" />
+          <img
+            className="invisible w-24 h-24"
+            loading="lazy"
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${index + 1}.png`}
+            alt={pokemonData.name}
+            onLoad={(event) => {
+              const target = event.target as HTMLImageElement;
+              target.classList.remove("invisible");
+              const placeholder = target.previousElementSibling;
+              if (placeholder) {
+                placeholder.classList.add("hidden");
+              }
+            }}
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
