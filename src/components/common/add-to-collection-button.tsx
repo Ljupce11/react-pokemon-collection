@@ -2,10 +2,10 @@ import { Check, Plus } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import useCollectionStore from "@/store/useCollectionStore";
-import type { Pokemon } from "@/types/types";
+import type { PokemonData } from "@/types/types";
 
 type Props = {
-  pokemon: Pokemon;
+  pokemon: PokemonData;
 };
 
 export const AddToCollectionButton = ({ pokemon }: Props) => {
