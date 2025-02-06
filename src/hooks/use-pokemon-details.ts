@@ -23,7 +23,6 @@ export const usePokemonDetails = (pokemonName: string) => {
           }
           const data = await response.json();
           setPokemonData(data);
-          console.log(data);
         } catch (error) {
           const errorMessage =
             error instanceof Error
