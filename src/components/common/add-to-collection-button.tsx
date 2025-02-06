@@ -1,4 +1,4 @@
-import { Check, Plus } from "lucide-react";
+import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import useCollectionStore from "@/store/useCollectionStore";
