@@ -12,10 +12,12 @@ createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Toaster />
     <Navbar />
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/my-collection" element={<MyCollection />} />
-      <Route path="/analytics" element={<Analytics />} />
-    </Routes>
+    <main className="bg-white border-gray-200 dark:bg-gray-900 min-h-screen">
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/my-collection" element={<MyCollection />} />
+        <Route path="/analytics" element={<Analytics />} />
+      </Routes>
+    </main>
   </BrowserRouter>,
 );
