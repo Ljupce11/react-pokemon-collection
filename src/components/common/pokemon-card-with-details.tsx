@@ -41,10 +41,12 @@ export const PokemonCardWithDetails = ({ pokemon, index }: Props) => {
 
         {isLoading ? (
           <PokemonDetailsSkeleton />
+        ) : !pokemonData ? (
+          <p className="text-center text-lg text-muted-foreground py-10">
+            No data found
+          </p>
         ) : (
-          pokemonData && (
-            <PokemonDetails index={index} pokemonData={pokemonData} />
-          )
+          <PokemonDetails index={index} pokemonData={pokemonData} />
         )}
 
         <DialogFooter>
