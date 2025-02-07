@@ -1,3 +1,4 @@
+import { Archive } from "lucide-react";
 import { Suspense, lazy } from "react";
 
 import { BulkActionButtons } from "@/components/common/my-collection/bulk-action-buttons";
@@ -45,7 +46,10 @@ export const MyCollection = () => {
         </Suspense>
       )}
       <div className="max-w-screen-xl flex flex-col mx-auto gap-8 p-4">
-        <h1 className="text-2xl font-semibold text-center">My Collection</h1>
+        <div className="flex justify-center items-center gap-3">
+          <Archive size={24} />
+          <h1 className="text-2xl font-semibold text-center">My collection</h1>
+        </div>
         <SearchForm />
 
         <BulkActionButtons />

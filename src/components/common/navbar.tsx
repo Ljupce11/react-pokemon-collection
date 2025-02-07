@@ -36,7 +36,7 @@ export const Navbar = () => {
                     className={isActive ? "border border-slate-900" : ""}
                     variant={isActive ? "default" : "outline"}
                   >
-                    My Collection
+                    My collection
                   </Button>
                 )}
               </NavLink>
