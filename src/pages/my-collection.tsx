@@ -1,7 +1,6 @@
 import { Archive } from "lucide-react";
 import { Suspense, lazy } from "react";
 
-import { BulkActionButtons } from "@/components/common/my-collection/bulk-action-buttons";
 import { MyCollectionTable } from "@/components/common/my-collection/my-collection-table";
 import { SearchForm } from "@/components/common/search-form";
 import { useCollectionDialogState } from "@/hooks/use-collection-dialog-state";
@@ -51,8 +50,6 @@ export const MyCollection = () => {
           <h1 className="text-2xl font-semibold text-center">My collection</h1>
         </div>
         <SearchForm />
-
-        <BulkActionButtons />
 
         <MyCollectionTable
           handleNotesDialog={(pokemon) => handleDialog("notes", pokemon)}
