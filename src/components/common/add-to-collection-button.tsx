@@ -6,15 +6,16 @@ import type { PokemonData } from "@/types/types";
 
 type Props = {
   pokemon: PokemonData;
+  index: number;
 };
 
-export const AddToCollectionButton = ({ pokemon }: Props) => {
+export const AddToCollectionButton = ({ pokemon, index }: Props) => {
   const { addPokemon, isPokemonInCollection } = useCollectionStore();
   const isInCollection = isPokemonInCollection(pokemon.name);
 
   const handleAddToCollection = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    addPokemon(pokemon);
+    addPokemon({ ...pokemon, id: index + 1, status: "wantToTrain" });
   };
 
   return (

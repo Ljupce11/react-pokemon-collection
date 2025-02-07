@@ -22,7 +22,7 @@ export const PokemonCard = ({ pokemon, index }: Props) => {
       <Separator />
       <CardContent className="flex justify-between items-center">
         <p className="capitalize font-semibold">{pokemon.name}</p>
-        <AddToCollectionButton pokemon={pokemon} />
+        <AddToCollectionButton pokemon={pokemon} index={index} />
       </CardContent>
     </Card>
   );

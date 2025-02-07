@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/sidebar";
 
 type Props = {
-  handleSearch: (value: string) => void;
+  handleSearch?: (value: string) => void;
 };
 
 export function SearchForm({ handleSearch }: Props) {
@@ -23,7 +23,7 @@ export function SearchForm({ handleSearch }: Props) {
             id="search"
             className="pl-8"
             placeholder="Search pokemon..."
-            onChange={(e) => handleSearch(e.target.value)}
+            onChange={(e) => handleSearch?.(e.target.value)}
           />
           <Search className="pointer-events-none absolute left-2 top-1/2 size-4 -translate-y-1/2 select-none opacity-50" />
         </SidebarGroupContent>
