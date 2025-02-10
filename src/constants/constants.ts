@@ -1,4 +1,5 @@
 import type { ChartConfig } from "@/components/ui/chart";
+import type { Stats } from "@/types/types";
 
 export const TOAST_SETTINGS = {
   title: "Uh oh! Something went wrong.",
@@ -61,5 +62,32 @@ export const recentCatches = [
   {
     name: "Weedle",
     experience: 600,
+  },
+];
+
+export const stats: Stats[] = [
+  {
+    title: "Total Pokemons",
+    value: 720,
+    progress: "+20.1% from last month",
+    icon: "archive",
+  },
+  {
+    title: "Experience",
+    value: 3350,
+    progress: "+180.1% from last month",
+    icon: "XP",
+  },
+  {
+    title: "Pokemons trained",
+    value: 234,
+    progress: "+19% from last month",
+    icon: "dumbbell",
+  },
+  {
+    title: "Battles",
+    value: 573,
+    progress: "+21 since last month",
+    icon: "swords",
   },
 ];

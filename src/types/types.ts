@@ -34,3 +34,10 @@ export type EditPokemonFormData = {
   name: PokemonData["name"];
   status: PokemonData["status"];
 };
+
+export type Stats = {
+  title: string;
+  value: number;
+  progress: string;
+  icon: "archive" | "XP" | "dumbbell" | "swords";
+};
