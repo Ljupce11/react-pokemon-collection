@@ -11,17 +11,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import useCollectionStore from "@/store/useCollectionStore";
-import type { MyCollectionDialogState, PokemonData } from "@/types/types";
+import type { MyCollectionDialogProps } from "@/types/types";
 
-type Props = {
-  dialogState: MyCollectionDialogState;
-  setDialogState: (
-    type: MyCollectionDialogState["type"],
-    pokemon?: PokemonData | null,
-  ) => void;
-};
-
-const RemovePokemonDialog = ({ dialogState, setDialogState }: Props) => {
+const RemovePokemonDialog = ({
+  dialogState,
+  setDialogState,
+}: MyCollectionDialogProps) => {
   const { type, pokemon } = dialogState;
   const removePokemon = useCollectionStore((state) => state.removePokemon);
 

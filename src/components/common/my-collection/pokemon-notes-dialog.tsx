@@ -13,17 +13,12 @@ import {
 } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import useCollectionStore from "@/store/useCollectionStore";
-import type { MyCollectionDialogState, PokemonData } from "@/types/types";
+import type { MyCollectionDialogProps } from "@/types/types";
 
-type Props = {
-  dialogState: MyCollectionDialogState;
-  setDialogState: (
-    type: MyCollectionDialogState["type"],
-    pokemon?: PokemonData | null,
-  ) => void;
-};
-
-const PokemonNotesDialog = ({ dialogState, setDialogState }: Props) => {
+const PokemonNotesDialog = ({
+  dialogState,
+  setDialogState,
+}: MyCollectionDialogProps) => {
   const { pokemon } = dialogState;
   const [notes, setNotes] = useState(pokemon?.notes ?? "");
   const updatePokemonNotes = useCollectionStore(

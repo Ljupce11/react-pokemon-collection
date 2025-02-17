@@ -10,18 +10,13 @@ import {
 } from "@/components/ui/dialog";
 import { DialogFooter, DialogHeader } from "@/components/ui/dialog";
 import { useEditPokemonForm } from "@/hooks/use-edit-pokemon-form";
-import type { MyCollectionDialogState, PokemonData } from "@/types/types";
+import type { MyCollectionDialogProps } from "@/types/types";
 import { EditPokemonDialogContent } from "./edit-pokemon-dialog-content";
 
-type Props = {
-  dialogState: MyCollectionDialogState;
-  setDialogState: (
-    type: MyCollectionDialogState["type"],
-    pokemon?: PokemonData | null,
-  ) => void;
-};
-
-const EditPokemonDialog = ({ dialogState, setDialogState }: Props) => {
+const EditPokemonDialog = ({
+  dialogState,
+  setDialogState,
+}: MyCollectionDialogProps) => {
   if (!dialogState.pokemon) return null;
   const { pokemon } = dialogState;
   const { formData, handleSaveChanges, handleSetFormData } = useEditPokemonForm(
