@@ -41,3 +41,11 @@ export type Stats = {
   progress: string;
   icon: "archive" | "XP" | "dumbbell" | "swords";
 };
+
+export type MyCollectionDialogProps = {
+  dialogState: MyCollectionDialogState;
+  setDialogState: (
+    type: MyCollectionDialogState["type"],
+    pokemon?: PokemonData | null,
+  ) => void;
+};
