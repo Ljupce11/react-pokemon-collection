@@ -1,7 +1,9 @@
+import { getPokemonImageUrl } from "@/lib/utils";
 import type { PokemonData } from "@/types/types";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { AddToCollectionButton } from "./add-to-collection-button";
+import { PokemonSprite } from "./pokemon-sprite";
 
 type Props = {
   pokemon: PokemonData;
@@ -12,9 +14,8 @@ export const PokemonCard = ({ pokemon, index }: Props) => {
   return (
     <Card className="transition-transform hover:scale-105 cursor-pointer">
       <CardHeader>
-        <img
-          loading="lazy"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+        <PokemonSprite
+          src={getPokemonImageUrl(index + 1)}
           alt={pokemon.name}
           className="w-24 h-24 mx-auto"
         />

@@ -1,8 +1,8 @@
 import { ClipboardList } from "lucide-react";
+
+import { BrowsePokemonContent } from "./components/common/browse-pokemon-content";
 import { Pagination } from "./components/common/pagination";
-import { PokemonCardWithDetails } from "./components/common/pokemon-card-with-details";
 import { SearchForm } from "./components/common/search-form";
-import { BrowsePokemonSkeleton } from "./components/skeletons/browse-pokemon-skeleton";
 import { usePokemonData } from "./hooks/use-pokemon-data";
 
 function App() {
@@ -23,21 +23,7 @@ function App() {
       </div>
       <SearchForm handleSearch={handleSearch} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {isLoading ? (
-          <BrowsePokemonSkeleton />
-        ) : pokemon.length === 0 ? (
-          <div className="col-span-full text-center text-gray-500">
-            No pokemon found
-          </div>
-        ) : (
-          pokemon.map((pokemon, index) => (
-            <PokemonCardWithDetails
-              key={pokemon.name}
-              pokemon={pokemon}
-              index={index}
-            />
-          ))
-        )}
+        <BrowsePokemonContent isLoading={isLoading} pokemon={pokemon} />
       </div>
       {pokemon.length > 0 && (
         <Pagination

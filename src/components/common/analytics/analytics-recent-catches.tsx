@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { recentCatches } from "@/constants/constants";
+import { getPokemonImageUrl } from "@/lib/utils";
 
 export const AnalyticsRecentCatches = () => {
   return (
@@ -8,7 +9,7 @@ export const AnalyticsRecentCatches = () => {
         <div key={pokemon.name} className="flex items-center">
           <Avatar className="h-9 w-9 border">
             <AvatarImage
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+              src={getPokemonImageUrl(index + 1)}
               alt={pokemon.name}
             />
             <AvatarFallback>{pokemon.name.charAt(0)}</AvatarFallback>

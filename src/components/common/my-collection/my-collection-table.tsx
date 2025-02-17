@@ -11,8 +11,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { COLLECTION_STATUS } from "@/constants/constants";
+import { getPokemonImageUrl } from "@/lib/utils";
 import useCollectionStore from "@/store/useCollectionStore";
 import type { PokemonData } from "@/types/types";
+import { PokemonSprite } from "../pokemon-sprite";
 import { BulkActionButtons } from "./bulk-action-buttons";
 import { MyCollectionTableActions } from "./my-collection-table-actions";
 
@@ -81,11 +83,10 @@ export const MyCollectionTable = ({
               </TableCell>
 
               <TableCell>
-                <img
-                  width={50}
-                  height={50}
+                <PokemonSprite
+                  className="w-10 h-10"
                   alt={pokemon.name}
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+                  src={getPokemonImageUrl(pokemon.id)}
                 />
               </TableCell>
 

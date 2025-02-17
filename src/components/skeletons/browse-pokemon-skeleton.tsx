@@ -10,11 +10,14 @@ export const BrowsePokemonSkeleton = () => {
         return (
           <Card key={key}>
             <CardHeader>
-              <Skeleton className="h-24 w-full rounded-md" />
+              <Skeleton className="h-24 w-24 mx-auto rounded-md" />
             </CardHeader>
             <Separator />
-            <CardContent>
+            <CardContent className="flex justify-between items-center">
               <Skeleton className="h-6 w-24 rounded-md" />
+              <div className="border rounded-lg p-2">
+                <Skeleton className="h-5 w-32 rounded-md" />
+              </div>
             </CardContent>
           </Card>
         );

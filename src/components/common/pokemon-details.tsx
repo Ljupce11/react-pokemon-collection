@@ -1,3 +1,4 @@
+import { getPokemonImageUrl } from "@/lib/utils";
 import type { PokemonData } from "@/types/types";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
@@ -15,7 +16,7 @@ export const PokemonDetails = ({ index, pokemonData }: Props) => {
       <div className="flex items-center justify-center gap-4">
         <PokemonSprite
           className="w-24 h-24"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+          src={getPokemonImageUrl(index + 1)}
           alt={pokemonData.name}
         />
         <div className="flex flex-col items-center gap-2">
